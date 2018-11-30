@@ -17,6 +17,8 @@
                 <button v-on:click="$emit('remove')">Remove</button>
             </template>
         </ul>
+        <!--خطا در زیر است-->
+        <!--Error here-->
         <ul>
             <td1
                     is="td1"
