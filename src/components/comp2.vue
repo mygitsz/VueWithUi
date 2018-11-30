@@ -10,8 +10,16 @@
             >
             <button>Add</button>
         </form>
+
+        <ul>
+            <template v-for="item in todos">
+                <li>{{ item.title }}</li>
+                <button v-on:click="$emit('remove')">Remove</button>
+            </template>
+        </ul>
         <ul>
             <td1
+                    is="td1"
                     v-for="(todo, index) in todos"
                     v-bind:key="todo.id"
                     v-bind:title="todo.title"
@@ -58,6 +66,7 @@
                     title: this.newTodoText
                 })
                 this.newTodoText = ''
+                alert(this.todos);
             }
         }
     }
