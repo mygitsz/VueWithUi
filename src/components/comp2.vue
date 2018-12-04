@@ -15,6 +15,7 @@
             <template v-for="item in todos">
                 <li>{{ item.title }}</li>
                 <button v-on:click="$emit('remove')">Remove</button>
+
             </template>
         </ul>
         <!--خطا در زیر است-->
@@ -64,10 +65,10 @@
         methods: {
             addNewTodo: function () {
                 this.todos.push({
-                    id: this.nextTodoId++,
+
                     title: this.newTodoText
                 })
-                this.newTodoText = ''
+                this.newTodoText = '';
                 alert(this.todos);
             }
         }
