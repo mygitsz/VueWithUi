@@ -23,17 +23,20 @@
         },
         //
         el: '#databinding',
-        data: {
-            name:'',
-            currencyfrom : [
-                {name : "USD", desc:"US Dollar"},
-                {name:"EUR", desc:"Euro"},
-                {name:"INR", desc:"Indian Rupee"},
-                {name:"BHD", desc:"Bahraini Dinar"}
-            ],
-            convertfrom: "INR",
-            convertto:"USD",
-            amount :""
+        data:function () {
+            return{
+                name:'',
+                currencyfrom : [
+                    {name : "USD", desc:"US Dollar"},
+                    {name:"EUR", desc:"Euro"},
+                    {name:"INR", desc:"Indian Rupee"},
+                    {name:"BHD", desc:"Bahraini Dinar"}
+                ],
+                convertfrom: "INR",
+                convertto:"USD",
+                amount :""
+            }
+
         },
         computed :{
             finalamount:function() {
