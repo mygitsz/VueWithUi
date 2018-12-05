@@ -21,6 +21,7 @@
             msg: String,
 
         },
+        //
         el: '#databinding',
         data: {
             name:'',
