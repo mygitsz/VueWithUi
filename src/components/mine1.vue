@@ -6,11 +6,39 @@
 
 </template>
 <template>
-    <div id="abb">
-        <h1>{{ message }}</h1>
-        <input v-model="message">
-    </div>
+    <html>
+    <head>
+        <title>VueJs Instance</title>
+        <script type = "text/javascript" src = "js/vue.js"></script>
+    </head>
+    <body>
+    <style>
+        #databinding{
+            padding: 20px 15px 15px 15px;
+            margin: 0 0 25px 0;
+            width: auto;
+            background-color: #e7e7e7;
+        }
+        span, option, input {
+            font-size:25px;
+        }
+    </style>
 
+    <div id = "databinding" style = "">
+        <h1>Currency Converter</h1>
+        <span>Enter Amount:</span><input type = "number" v-model.number = "amount" placeholder = "Enter Amount" /><br/><br/>
+        <span>Convert From:</span>
+        <select v-model = "convertfrom" style = "width:300px;font-size:25px;">
+            <option v-for = "(a, index) in currencyfrom"  v-bind:value = "a.name">{{a.desc}}</option>
+        </select>
+        <span>Convert To:</span>
+        <select v-model = "convertto" style = "width:300px;font-size:25px;">
+            <option v-for = "(a, index) in currencyfrom" v-bind:value = "a.name">{{a.desc}}</option>
+        </select><br/><br/>
+        <span> {{amount}} {{convertfrom}} equals {{finalamount}} {{convertto}}</span>
+    </div>
+    </body>
+    </html>
 </template>
 
 
