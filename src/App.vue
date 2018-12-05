@@ -2,15 +2,16 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
        <HelloWorld msg="my prog vue.js"/>
-        <mine1 msg="its first"/>
-        <mine1 msg="progecs"/>
+        <me1 msg="its first"/>
+
 
     </div>
 </template>
 
 <script>
    import HelloWorld from './components/HelloWorld.vue'
-   import Mine1 from "./components/mine1";
+   import me1 from './components/me1.vue'
+
    // import comp1 from './components/comp1.vue'
   //  import comp2 from './components/comp2.vue'
   //import my1 from './components/my1.vue'
@@ -19,7 +20,7 @@
     export default {
         name: 'app',
         components: {
-            Mine1,
+            me1,
             //my1,
             HelloWorld
            // comp1,comp2
