@@ -7,11 +7,11 @@
             <span>Enter Amount:</span><input type = "number" v-model.number = "amount" placeholder = "Enter Amount" /><br/><br/>
             <span>Convert From:</span>
             <select v-model = "convertfrom" style = "width:300px;font-size:25px;">
-               // <option v-for = "(a, index) in currencyfrom"  v-bind:value = "a.name">{{a.desc}}</option>
+                <option v-for = "(a, index) in currencyfrom"  v-bind:value = "a.name">{{a.desc}}</option>
             </select>
             <span>Convert To:</span>
             <select v-model = "convertto" style = "width:300px;font-size:25px;">
-                <option >{{a.desc}}</option>
+                <option v-for = "(a, index) in currencyfrom" v-bind:value = "a.name">{{a.desc}}</option>
             </select><br/><br/>
             <span> {{amount}} {{convertfrom}} equals {{finalamount}} {{convertto}}</span>
         </div>
