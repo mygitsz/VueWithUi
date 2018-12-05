@@ -1,22 +1,28 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="mos ravani ablah bi shoooouuuuuuurrrrrrrrr"/>
-        <comp1 />
-        <comp2/>
+       <HelloWorld msg="my prog vue.js"/>
+        <mine1 msg="its first"/>
+        <mine1 msg="progecs"/>
+
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
-    import comp1 from './components/comp1.vue'
-    import comp2 from './components/comp2.vue'
+   import HelloWorld from './components/HelloWorld.vue'
+   import Mine1 from "./components/mine1";
+   // import comp1 from './components/comp1.vue'
+  //  import comp2 from './components/comp2.vue'
+  //import my1 from './components/my1.vue'
 
 
     export default {
         name: 'app',
         components: {
-            HelloWorld,comp1,comp2
+            Mine1,
+            //my1,
+            HelloWorld
+           // comp1,comp2
         }
     }
 </script>
