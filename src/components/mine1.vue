@@ -1,79 +1,103 @@
 <template>
 
-    <html>
-    <head>
-        <title>VueJs Instance</title>
-
-    </head>
-    <body>
-    <div class="h">
-        <h1>{{ msg }}</h1>
-
-    </div>
-    <style scoped>
-
-        #databinding{
-            padding: 20px 15px 15px 15px;
-            margin: 0 0 25px 0;
-            width: auto;
-            background-color: #e7e7e7;
-        }
-        span, option, input {
-            font-size:25px;
-        }
-
-    </style>
     <div id = "databinding" style = "">
-        <h1>Currency Converter</h1>
-        <span>Enter Amount:</span><input type = "number" v-model.number = "amount" placeholder = "Enter Amount" /><br/><br/>
-        <span>Convert From:</span>
+
+        <h1>{{ msg }}</h1>
+        <h1>Customer Details</h1>
+        <span>First Name</span>
+        <input type = "text" placeholder = "Enter First Name" v-model = "fname"/>
+        <span>Last Name</span>
+        <input type = "text" placeholder = "Enter Last Name" v-model = "lname"/>
+        <span>Address</span>
+        <input type = "text" placeholder = "Enter Address" v-model = "addr"/>
+        <button v-on:click = "showdata" v-bind:style = "styleobj">Add</button>
+        <br/>
+        <br/>
+
 
     </div>
 
-    </body>
-    </html>
+
+
+
 </template>
 
 <script>
+   // import Ch1 from "./ch1";
     export default {
         name: "mine1",
+     //  components: {Ch1},
         props: {
             msg: String,
-
         },
-      //  el: '#databinding',
-      //  data: {
 
-            data: function () {
-            return{
-                name:'',
-                currencyfrom : [
-                    {name : "USD", desc:"US Dollar"},
-                    {name:"EUR", desc:"Euro"},
-                    {name:"INR", desc:"Indian Rupee"},
-                    {name:"BHD", desc:"Bahraini Dinar"}
-                ],
-                convertfrom: "INR",
-                convertto:"USD",
-                amount :""
+       data: function() {
+            return {
+                fname:'',
+                lname:'',
+                addr : '',
+                custdet:[],
+                styleobj: {
+                    backgroundColor: '#2196F3!important',
+                    cursor: 'pointer',
+                    padding: '8px 16px',
+                    verticalAlign: 'middle',
+                }
             }
 
+            },
+        methods :{
+            showdata : function() {
+                this.custdet.push({
+                    fname: this.fname,
+                    lname: this.lname,
+                    addr : this.addr
+                });
+                this.fname = "";
+                this.lname = "";
+                this.addr = "";
             }
-     //   },
-    }
+        }
+
+
+       }
 
 </script>
 
 <style scoped>
-
     #databinding{
         padding: 20px 15px 15px 15px;
         margin: 0 0 25px 0;
         width: auto;
-        background-color: #e7e7e7;
     }
     span, option, input {
-        font-size:25px;
+        font-size:20px;
+    }
+    .Table{
+        display: table;
+        width:80%;
+    }
+    .Title{
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading{
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row{
+        display: table-row;
+    }
+    .Cell{
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+        width:30%;
     }
 
 </style>
